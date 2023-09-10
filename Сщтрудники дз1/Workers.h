@@ -16,3 +16,6 @@ void inputNewWorker(Worker* );
 
 void printAllWorkers(Worker[], int);
 void printWorker(Worker);
+
+void writeToFile(Worker[], int);
+void readFromFile(Worker[], int&);

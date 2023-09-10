@@ -101,3 +101,46 @@ void printAllWorkers(Worker workers[], int N) {
 		printWorker(workers[i]);
 	}
 }
+
+
+void writeToFile(Worker workers[], int size) {
+	ofstream outputFile("workers_data.txt"); //создала файл
+	if (!outputFile) //проверка создалс€ ли файл
+		return;
+
+	outputFile << size << endl;
+	for (int i = 0; i < size; i++) {
+		outputFile << workers[i].firstName << endl;
+		outputFile << workers[i].lastName << endl;
+		outputFile << workers[i].telephone << endl;
+		outputFile << workers[i].salary << endl;
+	}
+	cout << "Success!" << endl;
+}
+void readFromFile(Worker workers[], int& last) {
+	ifstream file("workers_data.txt");
+
+	if (file.is_open()) {
+		string line; //строка дл€ считывани€
+		getline(file, line);//перва€ строка в файле-это количество работников
+		int count = stoi(line);//строку в число
+
+		for (int i = 0; i < count; i++) {
+			Worker* worker = new Worker;
+			getline(file, line);
+			worker->firstName = line;
+			getline(file, line);
+			worker->lastName = line;
+			getline(file, line);
+			worker->telephone = line;
+			getline(file, line);
+			worker->salary = stod(line);//string ->double
+			workers[i] = *worker;//в массив ложим того работника что сделали
+		}
+		last = count;
+		file.close();
+	}
+	else {
+		cout << "Ќе удалось открыть файл." << std::endl;
+	}
+}
