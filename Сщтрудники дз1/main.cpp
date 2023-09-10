@@ -92,7 +92,7 @@ void doMenu(Worker workers[], int& last) {
 
 
 int main() {
-    int N = 5;
+    const int N = 5;
     int last = 0;
     Worker workers[N];
     doMenu(workers, last);
