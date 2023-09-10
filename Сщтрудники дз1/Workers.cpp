@@ -203,3 +203,13 @@ void SortbyLastName(Worker workers[], int n) {
 				workers[j - 1] = temp;
 			}
 }
+
+
+void deleteWorker(Worker workers[], int& n, int userNumber) {
+
+	int index = userNumber - 1;
+	for (int i = index; i < n - 1; i++) {
+		workers[i] = workers[i + 1];
+	}
+	n--;
+}
