@@ -190,3 +190,16 @@ void searchBySalaryRange(Worker workers[], int numWorkers, int minSalary,
 		cout << "NO such worker with such salary" << endl;
 	}
 }
+
+void SortbyLastName(Worker workers[], int n) {
+
+	Worker temp;
+	int i, j;
+	for (i = 0; i < n - 1; i++)
+		for (j = n - 1; j > i; j--)
+			if (workers[j].lastName < workers[i].lastName) {
+				temp = workers[j];
+				workers[j] = workers[j - 1];
+				workers[j - 1] = temp;
+			}
+}

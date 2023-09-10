@@ -24,3 +24,5 @@ int searchByLastName(Worker[], int, string);
 void printByLastName(Worker[], int);
 
 void searchBySalaryRange(Worker[], int, int, int);
+
+void SortbyLastName(Worker[], int);
