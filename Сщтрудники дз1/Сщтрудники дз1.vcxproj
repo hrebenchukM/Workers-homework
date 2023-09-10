@@ -24,6 +24,7 @@
     <ProjectGuid>{bae8b3bf-19bc-43ea-8a52-82546a8a73df}</ProjectGuid>
     <RootNamespace>Сщтрудникидз1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Workers hw1</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,6 +141,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Workers.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Workers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
