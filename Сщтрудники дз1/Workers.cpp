@@ -172,3 +172,21 @@ void printByLastName(Worker workers[], int N) {
 		cout << "No such worker found" << endl;
 	}
 }
+
+void searchBySalaryRange(Worker workers[], int numWorkers, int minSalary,
+	int maxSalary) {
+	cout << "Result of searching by salary ";
+	cout << "(" << minSalary << "-" << maxSalary << ")";
+	bool found = false;
+
+	for (int i = 0; i < numWorkers; i++) {
+		if (workers[i].salary >= minSalary && workers[i].salary <= maxSalary) {
+			printWorker(workers[i]);
+			found = true;
+		}
+	}
+
+	if (!found) {
+		cout << "NO such worker with such salary" << endl;
+	}
+}
