@@ -13,3 +13,6 @@ string check(string);
 string checkPhone();
 Worker* addWorker(Worker[], int&);
 void inputNewWorker(Worker* );
+
+void printAllWorkers(Worker[], int);
+void printWorker(Worker);

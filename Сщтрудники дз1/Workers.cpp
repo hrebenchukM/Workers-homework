@@ -84,3 +84,20 @@ Worker* addWorker(Worker workers[], int& last) {
 	last++;
 	return worker;
 }
+
+
+void printWorker(Worker worker) {
+	cout << "  First name: " << worker.firstName << endl;
+	cout << "  Last name:  " << worker.lastName << endl;
+	cout << "  Telephone:  " << worker.telephone << endl;
+	cout << "  Salary:     " << worker.salary << endl;
+	cout << endl;
+}
+
+void printAllWorkers(Worker workers[], int N) {
+	cout << endl << "Workers list:" << endl;
+	for (int i = 0; i < N; i++) {
+		cout << "  N:          " << i + 1 << endl;
+		printWorker(workers[i]);
+	}
+}
