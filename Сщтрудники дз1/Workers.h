@@ -19,3 +19,6 @@ void printWorker(Worker);
 
 void writeToFile(Worker[], int);
 void readFromFile(Worker[], int&);
+
+int searchByLastName(Worker[], int, string);
+void printByLastName(Worker[], int);

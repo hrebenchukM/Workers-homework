@@ -144,3 +144,31 @@ void readFromFile(Worker workers[], int& last) {
 		cout << "Ќе удалось открыть файл." << std::endl;
 	}
 }
+
+int searchByLastName(Worker workers[], int N, string nameKey) {
+	for (int i = 0; i < N; i++) {
+		if (workers[i].lastName.find(nameKey) !=
+			std::string::npos) //≈сли в массиве в поле им€ содержитс€ поисковое
+							   //им€.тогда возвращаем позицию.
+		{
+			return i;
+		}
+	}
+	return -1; //нечего не найдено
+}
+
+void printByLastName(Worker workers[], int N) {
+	string nameKey;
+	cout << "Enter the last name to find:";
+	getline(cin >> ws, nameKey,
+		'\n'); // ws (пробел) в getline(),  ибо если числовой ввод находитс€
+			   // перед строкой, то из-за пробела первый ввод строки будет
+			   // проигнорирован.
+	int index = searchByLastName(workers, N, nameKey);
+	if (index >= 0) {
+		printWorker(workers[index]);
+	}
+	else {
+		cout << "No such worker found" << endl;
+	}
+}
